@@ -23,6 +23,19 @@ class Vegetable extends Model
      */
     public $timestamps = false;
 
+    /**
+     * Defines a list of attributes that should be cast
+     *
+     * @var array<string, string>
+     */
+    public $casts = [
+        'edible' => 'boolean'
+    ];
+
+    /**
+     * Defines a list of attributes
+     * @var string[]
+     */
     protected $fillable = [
         'id',
         'name',

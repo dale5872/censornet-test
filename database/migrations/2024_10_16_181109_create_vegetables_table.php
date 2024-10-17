@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('vegetables', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('classification');
-            $table->text('description');
-            $table->boolean('edible');
+            $table->string('name')->nullable(false);
+            $table->string('classification')->nullable(false);
+            $table->text('description')->nullable(true);
+            $table->boolean('edible')->default(true)->nullable(false);
         });
     }
 
