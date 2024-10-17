@@ -11,7 +11,7 @@ class IndexVegetableRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        // Since this API is open to any user, we can allow any request
+        // Since this API is open to any user, we can allow the request
         return true;
     }
 

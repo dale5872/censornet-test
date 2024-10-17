@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\IndexVegetableRequest;
-use App\Http\Resources\VegetableResource;
+use App\Http\Resources\VegetableCollectionResource;
 use App\Services\VegetableService;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class VegetableController
@@ -22,9 +21,9 @@ class VegetableController
      */
     public function index(
         IndexVegetableRequest $request
-    ): ResourceCollection | JsonResponse
+    ): ResourceCollection
     {
         $vegetables = $this->vegetableService->getVegetables();
-        return VegetableResource::collection($vegetables);
+        return new VegetableCollectionResource($vegetables);
     }
 }
