@@ -33,7 +33,7 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the read endpoint returns a single Vegetable based on the input ID
+     * Tests that the read endpoint returns a single Vegetable based on the input ID
      */
     public function test_read_returns_single_vegetable(): void
     {
@@ -52,7 +52,7 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the read endpoint correctly errors with a 404 code when trying to
+     * Tests that the read endpoint correctly errors with a 404 code when trying to
      * read a Vegetable that does not exist
      */
     public function test_read_fails_to_on_missing_vegetable(): void
@@ -63,7 +63,7 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the create endpoint correctly can create a new Vegetable entry
+     * Tests that the create endpoint correctly can create a new Vegetable entry
      */
     public function test_can_create_vegetable(): void
     {
@@ -91,7 +91,7 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the create endpoint correctly fails with a 422 error code when attempting to create a new entry
+     * Tests that the create endpoint correctly fails with a 422 error code when attempting to create a new entry
      * with missing data
      */
     public function test_fails_to_create_vegetable_with_missing_data(): void
@@ -110,8 +110,8 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the create endpoint correctly errors with a 404 code when trying to
-     * read a Vegetable that does not exist
+     * Tests that the create endpoint correctly errors with a 422 error code when attempting to create a new entry
+     * with incorrect data type(s)
      */
     public function test_fails_to_create_vegetable_with_incorrect_data(): void
     {
@@ -131,7 +131,7 @@ class VegetableControllerTest extends TestCase
 
 
     /**
-     * Test that the update endpoint correctly can update a new Vegetable entry
+     * Tests that the update endpoint correctly can update a new Vegetable entry
      */
     public function test_can_update_vegetable(): void
     {
@@ -159,7 +159,7 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the update endpoint correctly fails with a 422 error code when attempting to update a new entry
+     * Tests that the update endpoint correctly fails with a 422 error code when attempting to update a new entry
      * with missing data
      */
     public function test_fails_to_update_vegetable_with_missing_data(): void
@@ -178,8 +178,8 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the update endpoint correctly errors with a 404 code when trying to
-     * read a Vegetable that does not exist
+     * Tests that the update endpoint correctly errors with a 422 error code when attempting to create a new entry
+     * with incorrect data type(s)
      */
     public function test_fails_to_update_vegetable_with_incorrect_data(): void
     {
@@ -198,7 +198,7 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the delete endpoint correctly deletes the correct entry
+     * Tests that the delete endpoint correctly deletes the correct entry
      */
     public function test_can_delete_a_vegetable(): void
     {
@@ -215,7 +215,7 @@ class VegetableControllerTest extends TestCase
     }
 
     /**
-     * Test that the delete endpoint correctly fails to delete a missing vegetable
+     * Tests that the delete endpoint correctly fails to delete a missing vegetable
      */
     public function test_fails_to_delete_a_missing_vegetable(): void
     {

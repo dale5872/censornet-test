@@ -61,8 +61,6 @@ class VegetableService
      * Deletes an existing Vegetable entry
      *
      * @param Vegetable $vegetable
-     *
-     * @return void
      */
     public function deleteVegetable(
         Vegetable $vegetable
