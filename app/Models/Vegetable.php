@@ -33,7 +33,7 @@ class Vegetable extends Model
     ];
 
     /**
-     * Defines a list of attributes
+     * Defines a list of assignable attributes
      * @var string[]
      */
     protected $fillable = [

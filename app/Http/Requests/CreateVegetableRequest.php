@@ -24,7 +24,8 @@ class CreateVegetableRequest extends FormRequest
     {
         return [
             'name' => [
-                'required'
+                'required',
+                'alpha'
             ],
             'classification' => [
                 'required'

@@ -16,7 +16,7 @@ class VegetableFactory extends Factory
      */
     public function definition(): array
     {
-        $name = $this->faker->unique->word();
+        $name = $this->faker->word();
         $classification = $this->faker->word();
         $description = $this->faker->paragraph();
         $edible = $this->faker->boolean();
