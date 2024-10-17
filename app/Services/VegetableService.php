@@ -20,8 +20,53 @@ class VegetableService
      *
      * @return Collection
      */
-    public function getVegetables(): Collection
+    public function getAllVegetables(): Collection
     {
         return Vegetable::all();
+    }
+
+    /**
+     * Creates a new Vegetable entry in the database from an array of values
+     *
+     * @param array $values
+     *
+     * @return Vegetable
+     */
+    public function createVegetable(
+        array $values
+    ): Vegetable {
+        $vegetable = new Vegetable($values);
+        $vegetable->save();
+        return $vegetable;
+    }
+
+    /**
+     * Updates an existing Vegetable entry from an array of values
+     *
+     * @param Vegetable $vegetable
+     * @param array     $values
+     *
+     * @return Vegetable
+     */
+    public function updateVegetable(
+        Vegetable $vegetable,
+        array $values
+    ): Vegetable {
+        $vegetable->fill($values);
+        $vegetable->save();
+        return $vegetable;
+    }
+
+    /**
+     * Deletes an existing Vegetable entry
+     *
+     * @param Vegetable $vegetable
+     *
+     * @return void
+     */
+    public function deleteVegetable(
+        Vegetable $vegetable
+    ) {
+        $vegetable->delete();
     }
 }

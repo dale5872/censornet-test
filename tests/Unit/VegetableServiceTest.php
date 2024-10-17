@@ -20,7 +20,7 @@ class VegetableServiceTest extends TestCase
      */
     public function test_getVegetables_returns_all_entries(): void
     {
-        $collection = $this->vegetableService->getVegetables();
+        $collection = $this->vegetableService->getAllVegetables();
         self::assertNotNull($collection);
         self::assertJson($collection->toJson());
     }
