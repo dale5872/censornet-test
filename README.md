@@ -6,6 +6,8 @@ The goal of this task was to create a simple PHP Application, using the Laravel 
 
 The application was intiialised using Laravel Sail, so can easily be ran using Docker.
 
+Docker can be installed from https://www.docker.com
+
 First, run the following docker command to install all dependencies:
 ```
 docker run --rm \
