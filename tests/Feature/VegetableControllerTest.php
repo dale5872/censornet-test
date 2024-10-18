@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Vegetable;
 use Tests\TestCase;
 
 class VegetableControllerTest extends TestCase
@@ -40,15 +41,14 @@ class VegetableControllerTest extends TestCase
         $response = $this->get('/vegetables/1');
 
         $response->assertStatus(200);
-        $response->assertJsonStructure([
-            'data' => [
-                'id',
-                'name',
-                'classification',
-                'description',
-                'edible'
-            ]
-        ]);
+        $model = Vegetable::query()
+            ->where('id', 1)
+            ->first();
+        self::assertEquals($model->id, $response->json('data.id'));
+        self::assertEquals($model->name, $response->json('data.name'));
+        self::assertEquals($model->description, $response->json('data.description'));
+        self::assertEquals($model->classification, $response->json('data.classification'));
+        self::assertEquals($model->edible, $response->json('data.edible'));
     }
 
     /**
@@ -135,7 +135,7 @@ class VegetableControllerTest extends TestCase
      */
     public function test_can_update_vegetable(): void
     {
-        $response = $this->patchJson(
+        $response = $this->putJson(
             '/vegetables/1',
             [
                 'name' => 'Onion',
@@ -164,7 +164,7 @@ class VegetableControllerTest extends TestCase
      */
     public function test_fails_to_update_vegetable_with_missing_data(): void
     {
-        $response = $this->patchJson(
+        $response = $this->putJson(
             '/vegetables/1',
             [
                 'name' => 'Onion',
@@ -183,7 +183,7 @@ class VegetableControllerTest extends TestCase
      */
     public function test_fails_to_update_vegetable_with_incorrect_data(): void
     {
-        $response = $this->patchJson(
+        $response = $this->putJson(
             '/vegetables/1',
             [
                 'name' => 12345,

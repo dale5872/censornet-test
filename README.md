@@ -41,7 +41,7 @@ POST /api/vegetables - Creates a new Vegetable entry \
 &emsp;&emsp; 'name': boolean \
 &emsp; }
 \
-PATCH /api/vegetables/{id} - Updates an existing Vegetable entry \
+PUT /api/vegetables/{id} - Updates an existing Vegetable entry \
 &emsp; Body: \
 &emsp; { \
 &emsp;&emsp; 'name': string \
@@ -60,5 +60,6 @@ Some considerations for future steps could be:
 
 - Create a relationship model called 'Classification' so that different Vegetables can be linked
 to a defined classification
+- Add user authentication, so only registered users can access the API
 - The application could be expanded to other food types
 - The application could be further expanded to link different ingredients together to form a meal plan.

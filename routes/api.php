@@ -20,6 +20,6 @@ Route::group([
     Route::get('', [VegetableController::class, 'index']);
     Route::get('{vegetable}', [VegetableController::class, 'read']);
     Route::post('', [VegetableController::class, 'create']);
-    Route::patch('{vegetable}', [VegetableController::class, 'update']);
+    Route::put('{vegetable}', [VegetableController::class, 'update']);
     Route::delete('{vegetable}', [VegetableController::class, 'delete']);
 });
